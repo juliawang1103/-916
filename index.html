@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>國中會考 2000 單字 特訓版</title>
+    <title>國中會考英文2000單字（主題式分類）</title>
     <style>
         :root { --primary: #3498db; --success: #2ecc71; --error: #e74c3c; --bg: #f5f7f9; --text: #2c3e50; --progress-bg: #e5e9ec; --gemini: #8e44ad; }
         body { font-family: -apple-system, "Microsoft JhengHei", sans-serif; background: var(--bg); margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; height: 100vh; overflow: hidden; }
@@ -198,7 +198,7 @@
     function goPrev() { if (hIdx > 0) { hIdx--; renderQuiz(); } }
     function handleGlobalClick() { if (waitingForClick) goNext(); }
     function playVoice(text = null) { const t = text || history[hIdx].word.en; const msg = new SpeechSynthesisUtterance(t); msg.lang = 'en-US'; window.speechSynthesis.speak(msg); }
-    function triggerAutoAI(e, wordOverride = null) { e.stopPropagation(); const word = wordOverride || history[hIdx].word.en; e.currentTarget.href = `https://www.google.com/search?q=${encodeURIComponent(word + ' root etymology')}`; }
+    function triggerAutoAI(e, wordOverride = null) { e.stopPropagation(); const word = wordOverride || history[hIdx].word.en; e.currentTarget.href = `https://www.google.com/search?q=${encodeURIComponent(word + '字根字首與造句')}`; }
     function toggleManualMark() { const q = history[hIdx]; const idx = appData.review.findIndex(i => i.en === q.word.en); if (idx === -1) appData.review.push(q.word); else appData.review.splice(idx, 1); sync(); renderQuiz(); }
 
     let rvIdx = 0, rvShowZh = false;
