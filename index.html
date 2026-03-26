@@ -55,7 +55,7 @@
                 <div><div id="q-word" class="word-en">-</div></div>
                 <div style="margin-top:10px;">
                     <button class="btn-tool" onclick="event.stopPropagation(); playVoice();">📢 發音</button>
-                    <a id="auto-ai-link" class="btn-tool btn-gemini" href="#" target="_blank" onclick="triggerAutoAI(event)">🔍 字根查詢</a>
+                    <a id="auto-ai-link" class="btn-tool btn-gemini" href="#" target="_blank" onclick="triggerAutoAI(event)">🔍 查詢</a>
                 </div>
                 <div id="q-pos" style="color:#bdc3c7; font-style:italic; font-size:13px; margin: 12px 0 10px;">-</div>
                 <div id="q-options" class="options"></div>
@@ -208,7 +208,7 @@
         const item = appData.review[rvIdx];
         container.innerHTML = `<div class="card flashcard" onclick="event.stopPropagation(); rvShowZh=!rvShowZh; renderReview()">
             <div class="word-en">${item.en}</div>
-            <div style="margin-top:10px;"><button class="btn-tool" onclick="event.stopPropagation(); playVoice('${item.en}');">📢</button><a class="btn-tool btn-gemini" href="#" target="_blank" onclick="triggerAutoAI(event, '${item.en}')">🔍</a></div>
+            <div style="margin-top:10px;"><button class="btn-tool" onclick="event.stopPropagation(); playVoice('${item.en}');">📢 發音</button><a class="btn-tool btn-gemini" href="#" target="_blank" onclick="triggerAutoAI(event, '${item.en}')">🔍 查詢</a></div>
             <div style="color:#bdc3c7; font-style:italic; font-size:13px; margin: 15px 0;">(${item.pos})</div>
             ${rvShowZh ? `<div class="zh-hint">${item.zh}</div>` : `<div style="color:var(--primary); font-size:12px; margin-top:20px;">點擊看中文</div>`}
             <button class="btn-small" style="margin-top:30px; color:#e74c3c; border-color:#fab1a0;" onclick="event.stopPropagation(); removeReview('${item.en}')">移除</button></div>
